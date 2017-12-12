@@ -99,6 +99,7 @@ function total() {
  }
 
 
+<<<<<<< HEAD
 function removeFromCart(item) {
    // create an array to store keys in
    var itemList = [];
@@ -146,6 +147,44 @@ function removeFromCart(item) {
       }
     }
 
+=======
+ function removeFromCart(item) {
+   if (!cart.length) {
+     console.log("Your cart is currently empty.");
+
+     // Need to test if the item is a key of an object in the array cart????
+    } else if (cart.length > 0) {
+                var itemList = [];
+                // loop through keys in the cart
+                for (var t = 0; t < cart.length; t++) {
+                   let itemName = Object.keys(cart[t])[0];
+                   itemList.push(`${itemName}`);}
+                   if (!(itemList.includes(item))) {
+//                   if ((cart.lastIndexOf(item)) === -1) {
+                   // If item is not in cart (both examples above the one in use
+                   // and the one commented out do the same thing), print it
+                    console.log("That item is not in your cart.");
+                    } else { // if the item is in the cart remove the item from the cart
+                        for (var i = 0; i < cart.length; i++) {
+                        let itemName = item;
+                        if (itemName === (Object.keys(cart[i])[0])) {
+                           delete cart[i];
+                          while (cart[i] === undefined) { debugger
+                            temp = [];
+                            for(let i of cart)
+                              i && temp.push(i); // copy each non-empty value to the 'temp' array
+                              cart = temp;
+                              delete temp; // discard the variable
+                          }
+
+                        }   else {
+                            console.log(cart);
+                            } debugger
+      }
+  }
+ }
+ }
+>>>>>>> 1566f5da61825543ac3e2ac64724f15d1b18cd22
 
 function placeOrder(cardNumber) {
   if(cardNumber === undefined) {
